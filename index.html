@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxInnovation Bot</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <script type="text/javascript" src="animacao_go_back.js"></script>
+</head>
+<body>
+
+    <div id="cards">
+        <div class="perguntas" id="pergunta_1">
+            <h3>Insira o CNPJ</h3>
+            <input class="campos" placeholder="CNPJ" id="insira_cnpj">
+            
+            <div class="secundaria" id="secundaria_pergunta1">
+                <button class="botao_go">Back</button>
+                <button class="botao_go" onclick="go(1)">Go</button>
+            </div>
+        </div>
+
+        <div class="perguntas" id="pergunta_2">
+            <h3>Lucro</h3>
+            
+            <div class="titulos_regime">
+                <p class="regime">Lucro Real</p>
+                <p class="regime">Lucro Presumido</p>
+                <p class="regime">Simples</p>
+            </div>
+            
+            <label class="switch">    
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+            
+            <div class="secundaria" id="secundaria_pergunta2">
+                <button class="botao_go" onclick="back(2)">Back</button>
+                <button class="botao_go" onclick="go(2)">Go</button>
+            </div>
+        </div>
+
+        <div class="perguntas" id="pergunta_3">
+            <h3 id="titulo_receita_anual">Receita Bruta Anual</h3>
+            
+            <input class="campos" placeholder="Receita Aproximada" id="receita_anual_bruta">
+           
+            <div class="secundaria" id="secundaria_pergunta3">
+                <button class="botao_go" onclick="back(3)">Back</button>
+                <button class="botao_go" onclick="go(3)">Go</button>
+            </div>
+        </div>
+
+        <div class="perguntas" id="pergunta_4">
+            <h3 id="titulo_qtde_funcionarios">Quantidade de funcionários</h3>
+            
+            <input class="campos" placeholder="Qtde de Funcionários aproximada" type="number">
+           
+            <div class="secundaria" id="secundaria_pergunta4">
+                <button class="botao_go" onclick="back(4)">Back</button>
+                <button class="botao_go" onclick="go(4)">Go</button>
+            </div>
+        </div>
+
+        <div class="perguntas" id="pergunta_5">
+            <h3 id="titulo_nome_completo">Nome Completo</h3>
+            
+            <input class="campos" type="text" placeholder="Insira seu nome completo">
+           
+            <div class="secundaria" id="secundaria_pergunta4">
+                <button class="botao_go" onclick="back(5)">Back</button>
+                <button class="botao_go" onclick="go(5)">Go</button>
+            </div>
+        </div>
+
+        <div class="perguntas" id="pergunta_6">
+            <h3 id="titulo_email">Email</h3>
+            
+            <input class="campos" type="email" placeholder="Insira seu email. Ex: paulo@email.com">
+           
+            <div class="secundaria" id="secundaria_pergunta4">
+                <button class="botao_go"onclick="back(6)">Back</button>
+                <button class="botao_go">Go</button>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
