@@ -231,5 +231,6 @@ border-radius: 50%;
 .infos_cnpj {
     color:#033076;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 1.1vw;
+    font-size: 2vh;
+    margin: 2%;
 }

@@ -1,3 +1,4 @@
+
 var function_cnpj = function fn (event){
     var x = event.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
     event.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '/' + x[4] + (x[5] ? '-' + x[5] : '');    
@@ -27,12 +28,11 @@ var moeda =  function mascaraMoeda(evento){
   }
 
 window.onload = function() {
-
     document.getElementById('insira_cnpj').addEventListener('input', function_cnpj);
     document.getElementById('receita_anual_bruta').addEventListener('input', moeda);
+
 }
 
-document.getElementById('pergunta_' + (1)).scrollIntoView();
 
 function go(numero_botao) {
 
@@ -46,7 +46,7 @@ function go(numero_botao) {
     } else {
       getDadosCnpjReceita();
       setTimeout(function(){
-        elemento.style.height = '400px';
+        elemento.style.height = '20%';
         var botao_back = document.getElementById('back_confirma');
         var botao_go = document.getElementById('go_confirma');
         botao_back.classList.toggle('fade');
