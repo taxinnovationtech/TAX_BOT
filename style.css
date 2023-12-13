@@ -234,3 +234,26 @@ border-radius: 50%;
     font-size: 2vh;
     margin: 2%;
 }
+
+#opcoes_tributacao{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.butons_tributacao{
+    margin: 0 5% 0 5%;
+    width: 33%;
+    height: 50px;
+    background-color: #033076;
+    color: #3d8af7;
+    border-radius: 10px;
+}
+
+.butons_tributacao:hover{
+    background-color: #037aff;
+    color: white;
+    padding: 5%;
+    transition: .4s ease;
+    height: 70px;
+}

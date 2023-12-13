@@ -39,7 +39,12 @@
         <div class="perguntas" id="pergunta_2">
             <h3>Lucro</h3>
             
-            <div class="titulos_regime">
+            <div id="opcoes_tributacao">
+                <button id="lucro_presumido" class="butons_tributacao" onclick="go(2)">Lucro Presumido</button>
+                <button id="lucro_real" class="butons_tributacao" onclick="go(2)">Lucro Real</button>
+                <button id="simples" class="butons_tributacao" onclick="go(2)">Simples</button>
+            </div>
+            <!--<div class="titulos_regime">
                 <p class="regime">Lucro Real</p>
                 <p class="regime">Lucro Presumido</p>
                 <p class="regime">Simples</p>
@@ -59,10 +64,10 @@
                 <input type="checkbox">
                 <span class="slider round"></span>
             </label>
-            
+            -->
             <div class="secundaria" id="secundaria_pergunta2">
                 <button class="botao_go" onclick="back(2)">Back</button>
-                <button class="botao_go" onclick="go(2)">Go</button>
+                <button class="botao_go" onclick="go(2)"></button>
             </div>
         </div>
 
