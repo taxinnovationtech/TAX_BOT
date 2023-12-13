@@ -11,29 +11,64 @@
     width: 400px;
     height: 300px;
     text-align: center;
-    margin: 5% 0 0 0;
+    margin: 10% 0 0 0;
     
 }
 
 #pergunta_2{
-    display: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+#confirma_cnpj {
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+#confirma_cnpj.fade {
+    opacity: 1;
+}
+
+#pergunta_2.fade{
+    opacity: 1;
 }
 
 #pergunta_3{
-    display: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+#pergunta_3.fade{
+    opacity: 1;
 }
 
 #pergunta_4{
-    display: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+#pergunta_4.fade{
+    opacity: 1;
 }
 
 #pergunta_5{
-    display: none;
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+#pergunta_5.fade{
+    opacity: 1;
 }
 
 #pergunta_6{
-    display: none;
+    opacity: 0;
+    transition: opacity .3s ease;
 }
+
+#pergunta_6.fade{
+    opacity: 1;
+}
+
 
 .secundaria {
     display: flex;
@@ -61,13 +96,32 @@ h3 {
     color: #037aff;
 }
 
+#back_confirma{
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+#go_confirma{
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+#go_confirma.fade{
+    opacity: 1;
+}
+
+#back_confirma.fade{
+    opacity: 1;
+}
+
+
 .botao_go:hover {
    cursor: pointer;
    /*width: 150px;*/
-   font-size: 1.2vw;
    background-color: #037aff;
    color: #FFFFFF;
    border-radius: 10px;
+   transition: .4s ease;
 }
 
 .switch {
@@ -174,3 +228,8 @@ border-radius: 50%;
     font-size: 1.6vw;
 }
 
+.infos_cnpj {
+    color:#033076;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.1vw;
+}

@@ -32,21 +32,57 @@ window.onload = function() {
     document.getElementById('receita_anual_bruta').addEventListener('input', moeda);
 }
 
+document.getElementById('pergunta_' + (1)).scrollIntoView();
 
 function go(numero_botao) {
-    elemento = document.getElementById('pergunta_' + (numero_botao+1));
-    setInterval(proximo, 1000);
+
+    if (numero_botao != 1 ){
+      if (numero_botao == 'confirma'){
+        numero_botao = 1;
+      }
+      elemento = document.getElementById('pergunta_' + (numero_botao+1));
+      elemento.classList.toggle('fade');
+      elemento.scrollIntoView();
+    } else {
+      getDadosCnpjReceita();
+      setTimeout(function(){
+        elemento.style.height = '400px';
+        var botao_back = document.getElementById('back_confirma');
+        var botao_go = document.getElementById('go_confirma');
+        botao_back.classList.toggle('fade');
+        botao_go.classList.toggle('fade');
+      }, 4000);
+
+      elemento = document.getElementById('confirma_cnpj');
+      elemento.classList.toggle('fade');
+      elemento.scrollIntoView();
+      
+      
+    }
 };
 
-function proximo(){
-    
-    elemento.style.display = 'block';
-    elemento.scrollIntoView();
-};
 
 function back(numero_botao) {
-    elemento = document.getElementById('pergunta_' + (numero_botao-1));
-    elemento.scrollIntoView();
+
+    if (numero_botao == 'confirma'){
+      elemento_atual = document.getElementById('confirma_cnpj');
+      elemento_atual.classList.toggle('fade');
+      elemento = document.getElementById('pergunta_' + (1));
+      elemento.scrollIntoView();
+
+    } else if(numero_botao == 2){
+      elemento_atual = document.getElementById('pergunta_2');
+      elemento_atual.classList.toggle('fade');
+      elemento = document.getElementById('confirma_cnpj');
+      elemento.scrollIntoView();
+    } else {
+      elemento_atual = document.getElementById('pergunta_' + numero_botao);
+      elemento_atual.classList.toggle('fade');
+      elemento = document.getElementById('pergunta_' + (numero_botao-1));
+      elemento.scrollIntoView();
+    }
+    
+    
 };
 
 

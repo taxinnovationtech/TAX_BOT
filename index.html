@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TaxInnovation Bot</title>
     <link rel="stylesheet" href="style.css">
-    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat&display=swap" rel="stylesheet">
     <script type="text/javascript" src="animacao_go_back.js"></script>
+    <script type="text/javascript" src="consulta_dados.js"></script>
 </head>
 <body>
 
@@ -16,8 +19,21 @@
             <input class="campos" placeholder="CNPJ" id="insira_cnpj">
             
             <div class="secundaria" id="secundaria_pergunta1">
-                <button class="botao_go">Back</button>
+                <button class="botao_go"></button>
                 <button class="botao_go" onclick="go(1)">Go</button>
+            </div>
+        </div>
+
+        <div class="perguntas" id="confirma_cnpj">
+            <h3>Confirme de o Cnpj está Correto</h3>
+            <p id="cnpj_confirma" class="infos_cnpj">Realizando consulta...</p>
+            <p id="razao_social_confirma" class="infos_cnpj"></p>
+            <p id="situacao_cadastral_confirma" class="infos_cnpj"></p>
+            <p id="cnae_confirma" class="infos_cnpj"></p>
+            
+            <div class="secundaria" id="secundaria_pergunta1">
+                <button class="botao_go" onclick="back('confirma')" id="back_confirma" >Back</button>
+                <button class="botao_go" onclick="go('confirma')" id="go_confirma">Go</button>
             </div>
         </div>
 
