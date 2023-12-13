@@ -61,12 +61,22 @@ function go(numero_botao) {
     }
 };
 
-
 function back(numero_botao) {
 
     if (numero_botao == 'confirma'){
       elemento_atual = document.getElementById('confirma_cnpj');
       elemento_atual.classList.toggle('fade');
+
+      document.getElementById('cnpj_confirma').innerHTML = "Realizando consulta...";
+      document.getElementById('razao_social_confirma').innerHTML = "";
+      document.getElementById('situacao_cadastral_confirma').innerHTML = "";
+      document.getElementById('cnae_confirma').innerHTML = "";
+
+      var botao_back = document.getElementById('back_confirma');
+      var botao_go = document.getElementById('go_confirma');
+      botao_back.classList.toggle('fade');
+      botao_go.classList.toggle('fade');
+
       elemento = document.getElementById('pergunta_' + (1));
       elemento.scrollIntoView();
 
