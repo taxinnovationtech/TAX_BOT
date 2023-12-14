@@ -69,6 +69,15 @@
     opacity: 1;
 }
 
+#pergunta_7{
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+#pergunta_7.fade{
+    opacity: 1;
+}
+
 
 .secundaria {
     display: flex;

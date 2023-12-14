@@ -160,6 +160,17 @@ function gravaEmpresa(){
                           fetch('https://api-chat.taxchatbot.click/empresas', options).catch(e => {console.log(e);});
                         }
                 }).catch(e => {console.log(e);});
+  
+  document.getElementById('pergunta_1').style.display = "none";
+  document.getElementById('pergunta_2').style.display = "none";
+  document.getElementById('pergunta_3').style.display = "none";
+  document.getElementById('pergunta_4').style.display = "none";
+  document.getElementById('pergunta_5').style.display = "none";
+  document.getElementById('pergunta_6').style.display = "none";
+  document.getElementById('confirma_cnpj').style.display = "none";
+
+  elemento = document.getElementById('pergunta_7');
+  elemento.classList.toggle('fade');
 
 }
 
