@@ -125,6 +125,7 @@ function gravaEmpresa(){
   update['folha_salarial'] = '0';
   
   console.log(update)
+
   var options = {
     method: 'POST',
     headers: {
@@ -133,11 +134,16 @@ function gravaEmpresa(){
     body: JSON.stringify(update),
     };
 
-    
-    fetch('https://api-chat.taxchatbot.click/empresas', options).catch(e => {console.log(e);});
-    /*else {
-        fetch('https://api-chat.taxchatbot.click/empresas/atualiza', options).catch(e => {console.log(e);});
-    }*/
+    fetch('https://api-chat.taxchatbot.click/empresas/valida', options).then(resp => resp.text())
+                .then(r => {
+
+                        if(r != "Obrigado pelas informações. A TAXINNOVATION IA irá analisar e assim que o processo terminar vamos retorna a você. Obrigado pela preferência."){
+                          fetch('https://api-chat.taxchatbot.click/empresas/atualiza', options).catch(e => {console.log(e);});
+                        } else {
+                          fetch('https://api-chat.taxchatbot.click/empresas', options).catch(e => {console.log(e);});
+                        }
+                }).catch(e => {console.log(e);});
+
 }
 
 
