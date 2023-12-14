@@ -17,7 +17,7 @@ function getDadosCnpjReceita() {
                 .then((response) => response.json())
                 .then((response) => {
                     
-                    cnpj_receita = 'CNPJ: ' + response['taxId'].replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
+                    let cnpj_receita = 'CNPJ: ' + response['taxId'].replace(/^(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, "$1.$2.$3/$4-$5");
                     document.getElementById('cnpj_confirma').innerHTML = cnpj_receita;
                     console.log(cnpj_receita);
                     

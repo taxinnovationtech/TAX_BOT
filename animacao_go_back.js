@@ -1,4 +1,15 @@
 
+var update = {
+  "cnpj" : "",
+  "nome_comercial" : "",
+  "email_comercial" : "",
+  "faturamento_anual" : "",
+  "receita_liquida":"",
+  "regime_tributacao" : "",
+  "qtd_funcionarios" : "",
+  "folha_salarial" : ""
+};
+
 var function_cnpj = function fn (event){
     var x = event.target.value.replace(/\D/g, '').match(/(\d{0,2})(\d{0,3})(\d{0,3})(\d{0,4})(\d{0,2})/);
     event.target.value = !x[2] ? x[1] : x[1] + '.' + x[2] + '.' + x[3] + '/' + x[4] + (x[5] ? '-' + x[5] : '');    
@@ -34,7 +45,19 @@ window.onload = function() {
 }
 
 
-function go(numero_botao) {
+function go(numero_botao, button_type) {
+
+    if (button_type != ''){
+
+      if(button_type == 'presumido'){
+        update["regime_tributacao"] = document.getElementById('lucro_presumido').value;
+      } else if (button_type == 'real') {
+        update["regime_tributacao"] = document.getElementById('lucro_real').value;
+      } else {
+        update["regime_tributacao"] = document.getElementById('simples').value;
+      }
+    }
+
 
     if (numero_botao != 1 ){
       if (numero_botao == 'confirma'){
@@ -56,8 +79,6 @@ function go(numero_botao) {
       elemento = document.getElementById('confirma_cnpj');
       elemento.classList.toggle('fade');
       elemento.scrollIntoView();
-      
-      
     }
 };
 
@@ -91,9 +112,36 @@ function back(numero_botao) {
       elemento = document.getElementById('pergunta_' + (numero_botao-1));
       elemento.scrollIntoView();
     }
-    
-    
+
 };
+
+function gravaEmpresa(){
+  
+  update['cnpj'] = document.getElementById('insira_cnpj').value.replace("/","").replace(".","").replace("-","").replace(".", "");
+  update['faturamento_anual'] = document.getElementById('receita_anual_bruta').value;
+  update['qtd_funcionarios'] = document.getElementById('qt_funcionarios').value;
+  update['nome_comercial'] = document.getElementById('nome').value;
+  update['email_comercial'] = document.getElementById('email').value;
+  update['folha_salarial'] = '0';
+  
+  console.log(update)
+  var options = {
+    method: 'POST',
+    headers: {
+    'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(update),
+    };
+
+    
+    fetch('https://api-chat.taxchatbot.click/empresas', options).catch(e => {console.log(e);});
+    /*else {
+        fetch('https://api-chat.taxchatbot.click/empresas/atualiza', options).catch(e => {console.log(e);});
+    }*/
+}
+
+
+
 
 
 

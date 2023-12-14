@@ -19,7 +19,7 @@
             
             <div class="secundaria" id="secundaria_pergunta1">
                 <button class="botao_go"></button>
-                <button class="botao_go" onclick="go(1)">Go</button>
+                <button class="botao_go" onclick="go(1, '')">Go</button>
             </div>
         </div>
 
@@ -32,7 +32,7 @@
             
             <div class="secundaria" id="secundaria_pergunta1">
                 <button class="botao_go" onclick="back('confirma')" id="back_confirma" >Back</button>
-                <button class="botao_go" onclick="go('confirma')" id="go_confirma">Go</button>
+                <button class="botao_go" onclick="go('confirma', '')" id="go_confirma">Go</button>
             </div>
         </div>
 
@@ -40,9 +40,9 @@
             <h3>Lucro</h3>
             
             <div id="opcoes_tributacao">
-                <button id="lucro_presumido" class="butons_tributacao" onclick="go(2)">Lucro Presumido</button>
-                <button id="lucro_real" class="butons_tributacao" onclick="go(2)">Lucro Real</button>
-                <button id="simples" class="butons_tributacao" onclick="go(2)">Simples</button>
+                <button id="lucro_presumido" class="butons_tributacao" onclick="go(2,'presumido')">Lucro Presumido</button>
+                <button id="lucro_real" class="butons_tributacao" onclick="go(2, 'real')">Lucro Real</button>
+                <button id="simples" class="butons_tributacao" onclick="go(2, 'simples')">Simples</button>
             </div>
             <!--<div class="titulos_regime">
                 <p class="regime">Lucro Real</p>
@@ -67,7 +67,7 @@
             -->
             <div class="secundaria" id="secundaria_pergunta2">
                 <button class="botao_go" onclick="back(2)">Back</button>
-                <button class="botao_go" onclick="go(2)"></button>
+                <button class="botao_go" onclick="go(2, '')"></button>
             </div>
         </div>
 
@@ -78,40 +78,40 @@
            
             <div class="secundaria" id="secundaria_pergunta3">
                 <button class="botao_go" onclick="back(3)">Back</button>
-                <button class="botao_go" onclick="go(3)">Go</button>
+                <button class="botao_go" onclick="go(3, '')">Go</button>
             </div>
         </div>
 
         <div class="perguntas" id="pergunta_4">
             <h3 id="titulo_qtde_funcionarios">Quantidade de funcionários</h3>
             
-            <input class="campos" placeholder="Qtde de Funcionários aproximada" type="number">
+            <input id="qt_funcionarios" class="campos" placeholder="Qtde de Funcionários aproximada" type="number">
            
             <div class="secundaria" id="secundaria_pergunta4">
                 <button class="botao_go" onclick="back(4)">Back</button>
-                <button class="botao_go" onclick="go(4)">Go</button>
+                <button class="botao_go" onclick="go(4, '')">Go</button>
             </div>
         </div>
 
         <div class="perguntas" id="pergunta_5">
             <h3 id="titulo_nome_completo">Nome Completo</h3>
             
-            <input class="campos" type="text" placeholder="Insira seu nome completo">
+            <input id="nome" class="campos" type="text" placeholder="Insira seu nome completo">
            
             <div class="secundaria" id="secundaria_pergunta4">
                 <button class="botao_go" onclick="back(5)">Back</button>
-                <button class="botao_go" onclick="go(5)">Go</button>
+                <button class="botao_go" onclick="go(5, '')">Go</button>
             </div>
         </div>
 
         <div class="perguntas" id="pergunta_6">
             <h3 id="titulo_email">Email</h3>
             
-            <input class="campos" type="email" placeholder="Insira seu email. Ex: paulo@email.com">
+            <input id="email" class="campos" type="email" placeholder="Insira seu email. Ex: paulo@email.com">
            
             <div class="secundaria" id="secundaria_pergunta4">
-                <button class="botao_go"onclick="back(6)">Back</button>
-                <button class="botao_go">Go</button>
+                <button class="botao_go"onclick="back(6, '')">Back</button>
+                <button class="botao_go" onclick="gravaEmpresa()">Go</button>
             </div>
         </div>
     </div>
