@@ -1,8 +1,6 @@
 function getDadosCnpjReceita() {
         
-        
         setTimeout(() => {
-
 
             var cnpj_inserido = document.getElementById('insira_cnpj').value;
             cnpj_inserido = cnpj_inserido.replace("/","").replace(".","").replace("-","").replace(".","");
