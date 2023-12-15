@@ -254,13 +254,13 @@ border-radius: 50%;
     margin: 0 5% 0 5%;
     width: 33%;
     height: 50px;
-    background-color: #033076;
-    color: #3d8af7;
+    background-color: #808080;
+    color: white;
     border-radius: 10px;
 }
 
 .butons_tributacao:hover{
-    background-color: #037aff;
+    background-color: #A0A0A0;
     color: white;
     padding: 5%;
     transition: .4s ease;
